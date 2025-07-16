@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* giúp mình auto co dãn cái phần tử */
+  box-sizing: border-box;
+}
+
+body {
+  background: #1deefd;
+  background: linear-gradient(
+    179deg,
+    rgba(29, 238, 253, 1) 10%,
+    rgba(252, 243, 69, 1) 100%
+  );
+  /* sử dụng heigh để ngăn nó lặp đi lặp lại */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: #fff;
+  /* để tạo được cái khung chúng ta cần width nhưng mà nếu chúng ta để mỗi 600px nó sẽ tạo ra cái khung mong muốn
+  nhưng mà nó sẽ không có dãn được và luôn luôn mặc định 600px. Còn chúng ta để 100% thì nó sẽ có thể co dãn nhưng mà
+  không thể tạo ra được cái khung. Vì thế làm bằng cách sau:   width: 100%; max-width: 600px; lúc này sẽ như bạn mong muốn */
+  width: 100%;
+  max-width: 600px;
+  /* 1 cách căn giữa nữa */
+  /* sài margin là tự căn giữa chính nó còn sử dụng flex nó sẽ căn giữa các tk con nếu trong trường hợp này thì sẽ căn giữa
+  trong tk body để căn giữa tk con container */
+  /* margin: 0 auto; */
+  border-radius: 10px;
+  /* đoạn này không thấy được cái bo tròn của container
+  bởi vì nó bị header nó che nên cần dòng dưới  */
+  overflow: hidden;
+}
+header {
+  padding: 25px;
+  background: #6c7ae0;
+  color: white;
+}
+header h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.input-section {
+  display: flex;
+  gap: 10px;
+}
+/* Thuộc tính flex: 1;:
+
+Thuộc tính flex là viết tắt (shorthand) của ba thuộc tính trong mô hình Flexbox: flex-grow, flex-shrink, và flex-basis.
+Cụ thể, flex: 1 tương đương với:
+flex-grow: 1: Cho phép phần tử mở rộng để chiếm hết không gian trống còn lại trong container Flexbox (nếu có).
+flex-shrink: 1: Cho phép phần tử co lại nếu không gian trong container bị hạn chế.
+flex-basis: 0%: Đặt kích thước ban đầu của phần tử là 0% (hoặc gần bằng 0, tùy thuộc vào nội dung), 
+trước khi phân bổ không gian dựa trên flex-grow. */
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+}
+button {
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #293fba;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #1c2e90;
+}
+.todos-container{
+  padding: 20px;
+  /* điều kiện để làm scroll */
+  max-height: 400px;
+  /* tạo cái thanh scroll: overflow-y: scroll */
+  /* nhưng mà có trường họp là nó sẽ vẫn đủ để xem
+  toàn bộ nội dung mà không cần scroll mà nếu để theo code
+  trên nó sẽ luôn luôn hiện scroll cho dù thể hiện đủ 
+  nội dung vì thế ta sẽ dùng dòng code dưới */
+
+  /* nó chỉ để scroll khi vượt quá 400px ở trên */
+  overflow-y: auto;
+
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+  background-color: #fff;
+  padding:15px ;
+}
+.todo-content{
+  display: flex;
+  gap :10px;
+  align-items: center;
+  flex: 1;
+}
+
+.todo-action button{
+  background: none;
+  color: blue;
+  cursor: pointer;
+  font-size: 18px;
+}
+input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+
+}
