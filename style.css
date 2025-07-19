@@ -36,12 +36,13 @@ body {
 }
 header {
   padding: 25px;
-  background: #6c7ae0;
+  /* background: #6c7ae0; */
+  background-color: rgba(252, 243, 69, 1);
   color: white;
 }
 header h1 {
   text-align: center;
-  color: white;
+  color: green;
   margin-bottom: 20px;
   font-size: 24px;
 }
